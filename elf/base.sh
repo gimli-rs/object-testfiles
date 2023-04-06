@@ -8,3 +8,7 @@ mips64el-linux-gnuabi64-gcc -c base.c -o base-mips64el.o
 mips64el-linux-gnuabi64-gcc base.c -o base-mips64el
 loongarch64-unknown-linux-gnu-gcc -c base.c -o base-loongarch64.o
 loongarch64-unknown-linux-gnu-gcc base.c -o base-loongarch64
+gcc -fdebug-prefix-map=`pwd`=/object/testfiles/elf -g -c base.c -o base-debug.o
+objcopy --compress-debug-sections=zlib-gnu base-debug.o base-debug-zlib-gnu.o
+objcopy --compress-debug-sections=zlib base-debug.o base-debug-zlib.o
+objcopy --compress-debug-sections=zstd base-debug.o base-debug-zstd.o
