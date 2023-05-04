@@ -2,8 +2,10 @@
 gcc -c base.c -o base.o
 gcc base.c -o base -Xlinker --hash-style=both
 llvm-objcopy-6.0 --strip-sections base base.strip
+x86_64-linux-gnu-gcc-11 -fcf-protection=full -c base.c -o base-x86_64-gnu-properties.o
 aarch64-linux-gnu-gcc -c base.c -o base-aarch64.o
 aarch64-linux-gnu-gcc base.c -o base-aarch64
+aarch64-linux-gnu-gcc-11 -mbranch-protection=standard -c base.c -o base-aarch64-gnu-properties.o
 mips64el-linux-gnuabi64-gcc -c base.c -o base-mips64el.o
 mips64el-linux-gnuabi64-gcc base.c -o base-mips64el
 loongarch64-unknown-linux-gnu-gcc -c base.c -o base-loongarch64.o
