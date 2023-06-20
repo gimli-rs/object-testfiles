@@ -1,0 +1,3 @@
+LIBRARY test_arm64ec
+EXPORTS
+foo_arm64ec

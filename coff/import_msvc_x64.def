@@ -1,0 +1,6 @@
+LIBRARY test_x64
+EXPORTS
+foo_x64
+bar_x64 @1 NONAME
+FOO_x64 DATA
+BAR_x64 CONSTANT ; warning LNK4087: CONSTANT keyword is obsolete; use DATA
