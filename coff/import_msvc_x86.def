@@ -1,0 +1,3 @@
+LIBRARY test_x86
+EXPORTS
+foo_x86
