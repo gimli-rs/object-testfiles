@@ -14,3 +14,4 @@ gcc -fdebug-prefix-map=`pwd`=/object/testfiles/elf -g -c base.c -o base-debug.o
 objcopy --compress-debug-sections=zlib-gnu base-debug.o base-debug-zlib-gnu.o
 objcopy --compress-debug-sections=zlib base-debug.o base-debug-zlib.o
 objcopy --compress-debug-sections=zstd base-debug.o base-debug-zstd.o
+gcc -shared -fPIC -o libbase.so base.c -Wl,--default-symver
