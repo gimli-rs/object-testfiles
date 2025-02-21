@@ -17,3 +17,4 @@ objcopy --compress-debug-sections=zstd base-debug.o base-debug-zstd.o
 gcc -shared -fPIC -o libbase.so base.c -Wl,--default-symver
 x86_64-linux-gnu-gcc-13 base.c -o base-relr-x86_64 -Wl,-z,pack-relative-relocs
 i686-linux-gnu-gcc-13 base.c -o base-relr-i686 -Wl,-z,pack-relative-relocs
+objcopy --only-keep-debug base base.debug
