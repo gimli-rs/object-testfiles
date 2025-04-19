@@ -8,6 +8,8 @@ aarch64-linux-gnu-gcc base.c -o base-aarch64
 aarch64-linux-gnu-gcc-11 -mbranch-protection=standard -c base.c -o base-aarch64-gnu-properties.o
 mips64el-linux-gnuabi64-gcc -c base.c -o base-mips64el.o
 mips64el-linux-gnuabi64-gcc base.c -o base-mips64el
+loongarch32-unknown-linux-gnu-gcc -c base.c -o base-loongarch32.o
+loongarch32-unknown-linux-gnu-gcc base.c -o base-loongarch32
 loongarch64-unknown-linux-gnu-gcc -c base.c -o base-loongarch64.o
 loongarch64-unknown-linux-gnu-gcc base.c -o base-loongarch64
 gcc -fdebug-prefix-map=`pwd`=/object/testfiles/elf -g -c base.c -o base-debug.o
