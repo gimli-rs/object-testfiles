@@ -5,3 +5,4 @@ tar xvf wasi-sdk-${WASI_VERSION_FULL}-linux.tar.gz
 export WASI_SDK_PATH=`pwd`/wasi-sdk-${WASI_VERSION_FULL}
 CC="${WASI_SDK_PATH}/bin/clang --sysroot=${WASI_SDK_PATH}/share/wasi-sysroot"
 $CC base.c -o base.wasm
+$CC -c base.c -o base.o
