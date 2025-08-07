@@ -3,6 +3,8 @@ gcc -c base.c -o base.o
 gcc base.c -o base -Xlinker --hash-style=both
 objcopy --only-keep-debug base base.debug
 llvm-objcopy-6.0 --strip-sections base base.strip
+gcc-15 -c base.c -o base-sframe.o -Wa,--gsframe
+gcc-15 base.c -o base-sframe -Wa,--gsframe
 x86_64-linux-gnu-gcc-11 -fcf-protection=full -c base.c -o base-x86_64-gnu-properties.o
 aarch64-linux-gnu-gcc -c base.c -o base-aarch64.o
 aarch64-linux-gnu-gcc base.c -o base-aarch64
