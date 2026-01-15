@@ -23,3 +23,5 @@ gcc -shared -fPIC -o libbase.so base.c -Wl,--default-symver
 x86_64-linux-gnu-gcc-13 base.c -o base-relr-x86_64 -Wl,-z,pack-relative-relocs
 i686-linux-gnu-gcc-13 base.c -o base-relr-i686 -Wl,-z,pack-relative-relocs
 clang-21 -c base.c -o base-crel.o -Wa,--crel,--allow-experimental-crel
+# Sets sh_offset=0 for SHT_NOBITS
+clang-21 base.o -o base-mold-2.2 -Xlinker --hash-style=both -fuse-ld=mold
