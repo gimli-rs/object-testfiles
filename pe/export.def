@@ -1,0 +1,10 @@
+LIBRARY export
+EXPORTS
+    exported_named @1
+    exported_ordinal @2 NONAME
+    ; Two names aliasing the same function. Note that MSVC gives each name its
+    ; own ordinal (@3 and @4).
+    exported_multi @3
+    exported_alias=exported_multi
+    ; Ordinal @5 is left unused.
+    forward_by_name=kernel32.Sleep @6
