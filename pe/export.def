@@ -8,3 +8,4 @@ EXPORTS
     ; Ordinal @5 is left unused.
     forward_by_name=kernel32.Sleep @6
     forward_by_ordinal=kernel32.#123 @7
+    forward_with_dot=kernel32.dll.Sleep @8
