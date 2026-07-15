@@ -1,0 +1,18 @@
+VERS_1 {
+	global:
+		global_func;
+		global_data;
+		weak_func;
+		protected_func;
+		tls_var;
+		ifunc_func;
+		abs_sym;
+		versioned_func;
+	local:
+		*;
+};
+
+VERS_2 {
+	global:
+		versioned_func;
+} VERS_1;
