@@ -8,4 +8,5 @@ ld -r -arch arm64 -platform_version macos 15.0.0 15.5 \
 
 ld -dylib -arch arm64 -platform_version macos 15.0.0 15.5 \
     -syslibroot $(xcrun --show-sdk-path) -lSystem \
+    -reexported_symbols_list reexports.txt \
     exports.o -o libexports.dylib
