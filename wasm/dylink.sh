@@ -9,3 +9,9 @@ wasm-ld-22 $LDFLAGS --shared-memory --max-memory=65536 dylink-shared-memory.o -o
 
 clang-22 $CFLAGS -g -c dylink.c -o dylink-debug.o
 wasm-ld-22 $LDFLAGS dylink-debug.o -o dylink-debug.wasm
+
+clang-22 $CFLAGS -matomics -mbulk-memory -c dylink-weak.c -o dylink-weak.o
+wasm-ld-22 $LDFLAGS --shared-memory --max-memory=65536 dylink-weak.o -o dylink-weak.wasm
+
+clang-22 $CFLAGS -c dylink-needed.c -o dylink-needed.o
+wasm-ld-22 $LDFLAGS dylink-needed.o dylink.wasm -o dylink-needed.wasm
